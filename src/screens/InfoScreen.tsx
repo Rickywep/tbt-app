@@ -1,50 +1,50 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
+import styled from 'styled-components/native';
+
+const Container = styled(View)`
+  flex: 1;
+  padding: 16px;
+  background-color: white;
+`;
+
+const Subtitle = styled(Text)`
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #e59e24;
+`;
+
+const InfoText = styled(Text)`
+  font-size: 16px;
+  color: #18233f;
+`;
 
 const InfoScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.subtitle}>Categorización por ABV (Alcohol por Volumen)</Text>
-      <Text style={styles.text}>Light Beers: Menos del 4% ABV.</Text>
-      <Text style={styles.text}>Session Beers: Entre 4% y 6% ABV.</Text>
-      <Text style={styles.text}>Strong Beers: Entre 6% y 8% ABV.</Text>
-      <Text style={styles.text}>Very Strong Beers: Más del 8% ABV.</Text>
+    <Container>
+      <Subtitle>Categorización por ABV (Alcohol por Volumen)</Subtitle>
+      <InfoText>Light Beers: Menos del 4% ABV.</InfoText>
+      <InfoText>Session Beers: Entre 4% y 6% ABV.</InfoText>
+      <InfoText>Strong Beers: Entre 6% y 8% ABV.</InfoText>
+      <InfoText>Very Strong Beers: Más del 8% ABV.</InfoText>
 
-      <Text style={styles.subtitle}>Categorización por IBU (Unidades Internacionales de Amargura)</Text>
-      <Text style={styles.text}>Low Bitterness Beers: Menos de 20 IBU.</Text>
-      <Text style={styles.text}>Moderate Bitterness Beers: Entre 20 y 40 IBU.</Text>
-      <Text style={styles.text}>Medium Bitterness Beers: Entre 40 y 60 IBU.</Text>
-      <Text style={styles.text}>High Bitterness Beers: Entre 60 y 80 IBU.</Text>
-      <Text style={styles.text}>Very Bitter Beers: Más de 80 IBU.</Text>
+      <Subtitle>Categorización por IBU (Unidades Internacionales de Amargura)</Subtitle>
+      <InfoText>Low Bitterness Beers: Menos de 20 IBU.</InfoText>
+      <InfoText>Moderate Bitterness Beers: Entre 20 y 40 IBU.</InfoText>
+      <InfoText>Medium Bitterness Beers: Entre 40 y 60 IBU.</InfoText>
+      <InfoText>High Bitterness Beers: Entre 60 y 80 IBU.</InfoText>
+      <InfoText>Very Bitter Beers: Más de 80 IBU.</InfoText>
 
-      <Text style={styles.subtitle}>Categorización por EBC (European Brewery Convention)</Text>
-      <Text style={styles.text}>Extra Pale Beers: Menos de 8 EBC.</Text>
-      <Text style={styles.text}>Pale Beers: Entre 8 y 17 EBC.</Text>
-      <Text style={styles.text}>Amber Beers: Entre 17 y 35 EBC.</Text>
-      <Text style={styles.text}>Brown Beers: Entre 35 y 50 EBC.</Text>
-      <Text style={styles.text}>Dark Beers: Más de 50 EBC.</Text>
-    </View>
+      <Subtitle>Categorización por EBC (European Brewery Convention)</Subtitle>
+      <InfoText>Extra Pale Beers: Menos de 8 EBC.</InfoText>
+      <InfoText>Pale Beers: Entre 8 y 17 EBC.</InfoText>
+      <InfoText>Amber Beers: Entre 17 y 35 EBC.</InfoText>
+      <InfoText>Brown Beers: Entre 35 y 50 EBC.</InfoText>
+      <InfoText>Dark Beers: Más de 50 EBC.</InfoText>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: 'white',
-  },
-
-  subtitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 16,
-    marginBottom: 8,
-    color: '#E59E24',
-  },
-  text: {
-    fontSize: 16,
-    color: '#18233F',
-  }
-});
 
 export default InfoScreen;

@@ -1,10 +1,61 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
+import styled from 'styled-components/native';
 
 import { StartStackParams } from 'src/interfaces/StartStackInterface';
 
 interface Props extends StackScreenProps<StartStackParams, 'DetailBeerScreen'> {}
+
+const Container = styled(View)`
+  flex: 1;
+  background-color: white;
+  align-items: center;
+  margin-horizontal: 16px;
+`;
+
+const TaglineText = styled(Text)`
+  font-size: 16.8px;
+  color: #18233f;
+  font-weight: bold;
+  margin-vertical: 16px;
+`;
+
+const DescriptionContainer = styled(View)`
+  background-color: #e59e24;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 16px;
+  shadow-color: #000;
+  shadow-offset: {
+    width: 0;
+    height: 2;
+  }
+  shadow-opacity: 0.25;
+  shadow-radius: 3.84;
+  elevation: 5;
+`;
+
+const DescriptionText = styled(Text)`
+  font-size: 14.8px;
+  color: white;
+  margin-vertical: 16px;
+`;
+
+const BeerImage = styled(Image)`
+  width: 90px;
+  height: 300px;
+  resize-mode: stretch;
+  margin-vertical: 5px;
+  margin-horizontal: 16px;
+`;
+
+const DetailRow = styled(View)`
+  flex-direction: row;
+  justify-content: space-around;
+  margin-horizontal: 16px;
+  margin-bottom: 16px;
+`;
 
 const DetailText = ({ text }: { text: string }) => {
   return (
@@ -30,74 +81,19 @@ const DetailText = ({ text }: { text: string }) => {
 const DetailBeerScreen = ({ route }: Props) => {
   const { image_url, tagline, description, abv, ibu, ebc, ph } = route.params.item;
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        marginHorizontal: 16,
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 16.8,
-          color: '#18233F',
-          fontWeight: 'bold',
-          marginVertical: 16,
-        }}
-      >
-        {tagline}
-      </Text>
-      <View
-        style={{
-          backgroundColor: '#E59E24',
-          borderRadius: 10,
-          padding: 10,
-          marginBottom: 16,
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 2,
-          },
-          shadowOpacity: 0.25,
-          shadowRadius: 3.84,
-          elevation: 5,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 14.8,
-            color: 'white',
-            marginVertical: 16,
-          }}
-        >
-          {description}
-        </Text>
-      </View>
-      <Image
-        source={{ uri: image_url }}
-        style={{
-          width: 90,
-          height: 300,
-          resizeMode: 'stretch',
-          marginVertical: 5,
-          marginHorizontal: 16,
-        }}
-      />
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          marginHorizontal: 16,
-          marginBottom: 16,
-        }}
-      >
+    <Container>
+      <TaglineText>{tagline}</TaglineText>
+      <DescriptionContainer>
+        <DescriptionText>{description}</DescriptionText>
+      </DescriptionContainer>
+      <BeerImage source={{ uri: image_url }} />
+      <DetailRow>
         <DetailText text={`abv: ${abv}`} />
         <DetailText text={`ibu: ${ibu}`} />
         <DetailText text={`ebc: ${ebc}`} />
         <DetailText text={`ph: ${ph}`} />
-      </View>
-    </View>
+      </DetailRow>
+    </Container>
   );
 };
 
