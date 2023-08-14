@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, Image } from 'react-native';
+import { TouchableOpacity, View, Text, Image, TouchableHighlight } from 'react-native';
 import { Beer } from '../interfaces/beerInterface';
 import styled from 'styled-components/native';
 
@@ -39,7 +39,8 @@ const InfoText = styled(Text)`
 
 export const BeerItem = ({ item, onPress }: { item: Beer; onPress: () => void }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableHighlight onPress={onPress} underlayColor={'white'}
+    >
       <Container>
         <NameText>{item.name}</NameText>
         <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'center' }}>
@@ -58,6 +59,6 @@ export const BeerItem = ({ item, onPress }: { item: Beer; onPress: () => void })
           </View>
         </View>
       </Container>
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 };
