@@ -39,7 +39,7 @@ const InfoText = styled(Text)`
 
 export const BeerItem = ({ item, onPress }: { item: Beer; onPress: () => void }) => {
   return (
-    <TouchableHighlight onPress={onPress} underlayColor={'white'}
+    <TouchableHighlight onPress={onPress} underlayColor={'white'} testID='beer-item'
     >
       <Container>
         <NameText>{item.name}</NameText>

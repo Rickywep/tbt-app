@@ -28,7 +28,8 @@ export const BeersList = ({ beers, isLoading, clearFilters }: Props) => {
           style={{ flex: 3 }}
           data={beers}
           keyExtractor={item => item.id.toString()}
-          renderItem={({ item }) => <BeerItem item={item} onPress={() => navigate('DetailBeerScreen', { item })} />}
+          renderItem={({ item }) => <BeerItem item={item} onPress={() => navigate('DetailBeerScreen', { item })}  />}
+          testID='beers-flat-list'
         />
       )}
     </View>
