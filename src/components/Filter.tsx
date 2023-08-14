@@ -34,7 +34,7 @@ export const Filter = ({
   return (
     <Container>
       <Header>
-        <HeaderText>Filtrar por:</HeaderText>
+        <HeaderText>Filter by:</HeaderText>
         <ClearFilterButton clearFilters={clearFilters} />
       </Header>
       <PillsFilter pills={abvItems} filter={abvFilter} title="ABV" />

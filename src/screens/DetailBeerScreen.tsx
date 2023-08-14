@@ -27,12 +27,9 @@ const DescriptionContainer = styled(View)`
   padding: 10px;
   margin-bottom: 16px;
   shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2;
-  }
+  shadow-offset: 0px 2px;
   shadow-opacity: 0.25;
-  shadow-radius: 3.84;
+  shadow-radius: 3.84px;
   elevation: 5;
 `;
 

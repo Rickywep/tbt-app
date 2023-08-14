@@ -9,7 +9,7 @@ const ClearFiltersText = styled(Text)`
 export const ClearFilterButton = ({ clearFilters }: { clearFilters: () => void }) => {
   return (
     <TouchableWithoutFeedback onPress={clearFilters}>
-      <ClearFiltersText>Limpiar filtros</ClearFiltersText>
+      <ClearFiltersText>Clean filters</ClearFiltersText>
     </TouchableWithoutFeedback>
   );
 };
