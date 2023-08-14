@@ -1,79 +1,78 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Challenge en React Native
 
-# Getting Started
+Este es un challenge en el que se  solicita desarrollar una aplicación en React Native tomando como guía el diseño proporcionado en Figma y consumiendo una API REST. A continuación, se detallan los requerimientos y funcionalidades.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Requerimientos del Challenge
 
-## Step 1: Start the Metro Server
+1. Mostrar una lista de productos con diferentes filtros.
+2. Usar React Native.
+3. Usar algún UI Kit de preferencia.
+4. La estructura del proyecto debe estar limpia y seguir algún patrón.
+5. Ideal usar TypeScript, no es obligatorio, pero ayudará en la evaluación.
+6. Desarrollar algunas pruebas para validar el proyecto. Se dejará a criterio del programador qué suite de prueba usar. No es obligatorio, pero ayudará en la evaluación. El uso de Detox suma puntos extra.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+### Implementaciones propias
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. Uso de styled-components.
+2. Uso de TypeScript
+3. Crear custom hooks.
+4. Incluir un README.md bien detallado.
+5. Seguir buenas prácticas de clean code para un código más legible y mantenible.
 
-```bash
-# using npm
-npm start
+### Diseño en Figma
 
-# OR using Yarn
-yarn start
+Puedes encontrar el diseño necesario para el challenge en el siguiente enlace: [Diseño en Figma](https://www.figma.com/proto/VLTdKNkeRCJ5I7URtsXEd5/Untitled?node-id=1-2&scaling=min-zoom&page-id=0%3A1)
+
+### API REST
+
+Puedes encontrar la documentación de la API aquí: [punkapi](https://punkapi.com/documentation/v2)
+
+# Nombre del Proyecto: TbtApp Beer App
+
+## Requisitos
+
+Asegúrate de tener los siguientes requisitos antes de comenzar:
+
+- Node.js instalado en tu máquina
+- React Native CLI instalado globalmente (`npm install -g react-native-cli`)
+- Android Studio
+- Emulador de Android o dispositivo físico para pruebas en Android
+
+## Instalación
+
+Sigue los siguientes pasos para instalar y ejecutar el proyecto:
+
+1. Clona este repositorio en tu máquina local
+
+2. Navega al directorio del proyecto
+
+3. Instala las dependencias del proyecto:
+
+```
+yarn install
 ```
 
-## Step 2: Start your Application
+4. Para ejecutar en Android:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- Abre el emulador de Android o conecta tu dispositivo físico
+- Ejecuta el siguiente comando:
 
-### For Android
+  ```
+  react-native run-android
+  ```
 
-```bash
-# using npm
-npm run android
+**Nota**: La aplicación en iOS no ha sido probada debido a limitaciones de tiempo.
 
-# OR using Yarn
-yarn android
-```
+## Dependencias
 
-### For iOS
+Lista de las dependencias principales utilizadas en este proyecto:
 
-```bash
-# using npm
-npm run ios
+- [React Native](https://reactnative.dev/)
+- [React Navigation](https://reactnavigation.org/)
+- [Styled Components](https://styled-components.com/)
+- [@react-navigation/native](https://www.npmjs.com/package/@react-navigation/native) - ^6.1.6
+- [@react-navigation/stack](https://www.npmjs.com/package/@react-navigation/stack) - ^6.3.16
+- [react-query](https://www.npmjs.com/package/axios)
+- [axios](https://www.npmjs.com/package/axios)
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Asegúrate de revisar el archivo `package.json` para obtener una lista completa de las dependencias y sus versiones.

@@ -28,5 +28,4 @@ describe('BeersList', () => {
     expect(beerItems.length).toBe(mockBeers.length);
   });
 
-  // You can add more test cases as needed
 });

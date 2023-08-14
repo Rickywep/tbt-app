@@ -18,7 +18,6 @@ describe('BeerItem component', () => {
   it('renders correctly', () => {
     const { getByTestId, getByText } = render(<BeerItem item={mockBeer} onPress={mockOnPress} />);
     
-    // Verificar que los elementos renderizados sean correctos
     expect(getByTestId('beer-item')).toBeDefined();
     expect(getByText('Mock Beer')).toBeDefined();
     expect(getByText('abv: 5')).toBeDefined();
