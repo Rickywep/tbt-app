@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import { FilterButton } from './FilterButton';
 
 type Pill = {
-  setFilter: () => void;
+  setFilter: (value: boolean) => void;
   text: string;
 };
 
@@ -21,7 +21,7 @@ const StyledText = styled(Text)`
   margin: 4px;
   font-size: 14px;
   font-weight: bold;
-  color: #18233F;
+  color: #18233f;
 `;
 
 const StyledScrollView = styled(ScrollView)`
@@ -35,11 +35,15 @@ export const PillsFilter = ({ pills, title, filter }: Props) => {
       <StyledText>{title}</StyledText>
 
       <StyledScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {pills.map((pill, i) => (
-          <View key={i}>
-            <FilterButton onPress={pill.setFilter} title={pill.text} selected={filter.text === pill.text} />
-          </View>
-        ))}
+        {pills.map((pill, i) => {
+          const selected = filter.text === pill.text;
+
+          return (
+            <View key={i}>
+              <FilterButton onPress={() => pill.setFilter(selected)} title={pill.text} selected={selected} />
+            </View>
+          );
+        })}
       </StyledScrollView>
     </>
   );

@@ -15,9 +15,9 @@ const StyledTouchableOpacity = styled(TouchableOpacity)<Props>`
   border-color: ${({ selected }) => (selected ? 'transparent' : '#E59E24')};
   border-width: 1px;
   shadow-color: #000;
-  shadow-offset: 0px 2px; 
+  shadow-offset: 0px 2px;
   shadow-opacity: 0.25;
-  shadow-radius: 3.84px; 
+  shadow-radius: 3.84px;
   elevation: 5;
 `;
 
@@ -29,13 +29,13 @@ const ButtonText = styled(Text)<Props>`
 `;
 
 interface FilterButtonProps {
-  onPress: () => void;
+  onPress: (value: boolean) => void;
   title: string;
   selected: boolean;
 }
 
 export const FilterButton = ({ onPress, title, selected }: FilterButtonProps) => (
-  <StyledTouchableOpacity onPress={onPress} selected={selected}>
+  <StyledTouchableOpacity onPress={() => onPress(selected)} selected={selected}>
     <ButtonText selected={selected}>{title}</ButtonText>
   </StyledTouchableOpacity>
 );
