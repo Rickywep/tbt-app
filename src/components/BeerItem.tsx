@@ -1,43 +1,49 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, Image } from 'react-native';
 import { Beer } from '../interfaces/beerInterface';
+import styled from 'styled-components/native';
+
+const Container = styled(View)`
+  border-radius: 10px;
+  margin-vertical: 8px;
+  padding: 16px;
+  background-color: white;
+  border-color: #bcbfc4;
+  border-width: 1px;
+  shadow-color: #000;
+  shadow-offset: 2px 3px;
+  shadow-opacity: 0.25;
+  shadow-radius: 3.84px;
+  elevation: 6;
+`;
+
+const NameText = styled(Text)`
+  color: #18233f;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+`;
+
+const StyledImage = styled(Image)`
+  width: 30px;
+  height: 100px;
+  resize-mode: stretch;
+  margin-vertical: 5px;
+  margin-horizontal: 16px;
+`;
+
+const InfoText = styled(Text)`
+  color: #e59e24;
+  font-weight: bold;
+`;
+
 export const BeerItem = ({ item, onPress }: { item: Beer; onPress: () => void }) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <View
-        style={{
-          borderRadius: 10,
-          marginVertical: 8,
-          padding: 16,
-          backgroundColor: 'white',
-          borderColor: '#BCBFC4',
-          borderWidth: 1,
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 2,
-            height: 3,
-          },
-          shadowOpacity: 0.25,
-          shadowRadius: 3.84,
-          elevation: 6,
-        }}
-      >
-        <Text style={{ color: '#18233F', fontWeight: 'bold', fontSize: 20, textAlign: 'center' }}>{item.name}</Text>
+      <Container>
+        <NameText>{item.name}</NameText>
         <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'center' }}>
-          {item.image_url ? (
-            <Image
-              source={{ uri: item.image_url }}
-              style={{
-                width: 30,
-                height: 100,
-                resizeMode: 'stretch',
-                marginVertical: 5,
-                marginHorizontal: 16,
-              }}
-            />
-          ) : (
-            <Text>No image</Text>
-          )}
+          {item.image_url ? <StyledImage source={{ uri: item.image_url }} /> : <InfoText>No image</InfoText>}
           <View
             style={{
               flexDirection: 'column',
@@ -46,33 +52,12 @@ export const BeerItem = ({ item, onPress }: { item: Beer; onPress: () => void })
               marginBottom: 16,
             }}
           >
-            <Text
-              style={{
-                color: '#E59E24',
-                fontWeight: 'bold',
-              }}
-            >
-              abv: {item.abv}
-            </Text>
-            <Text
-              style={{
-                color: '#E59E24',
-                fontWeight: 'bold',
-              }}
-            >
-              ibu: {item.ibu}
-            </Text>
-            <Text
-              style={{
-                color: '#E59E24',
-                fontWeight: 'bold',
-              }}
-            >
-              ebc: {item.ebc}
-            </Text>
+            <InfoText>abv: {item.abv}</InfoText>
+            <InfoText>ibu: {item.ibu}</InfoText>
+            <InfoText>ebc: {item.ebc}</InfoText>
           </View>
         </View>
-      </View>
+      </Container>
     </TouchableOpacity>
   );
 };
