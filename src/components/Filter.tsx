@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import { PillsFilter } from './PillsFilter';
 import { FilterProps } from '../interfaces/filterInterface';
+import { ClearFilterButton } from './ClearFilterButton';
 
 const Container = styled(View)`
   flex-direction: column;
@@ -21,14 +22,6 @@ const HeaderText = styled(Text)`
   font-size: 16px;
 `;
 
-const ClearFiltersText = styled(Text)`
-  color: #bcbfc4;
-`;
-
-interface FilterPropsStyled extends FilterProps {
-  clearFilters: () => void;
-}
-
 export const Filter = ({
   abvItems,
   abvFilter,
@@ -42,9 +35,7 @@ export const Filter = ({
     <Container>
       <Header>
         <HeaderText>Filtrar por:</HeaderText>
-        <TouchableWithoutFeedback onPress={clearFilters}>
-          <ClearFiltersText>Limpiar filtros</ClearFiltersText>
-        </TouchableWithoutFeedback>
+        <ClearFilterButton clearFilters={clearFilters} />
       </Header>
       <PillsFilter pills={abvItems} filter={abvFilter} title="ABV" />
       <PillsFilter pills={ibuItems} title="IBU" filter={ibuFilter} />

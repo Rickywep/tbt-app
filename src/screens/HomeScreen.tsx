@@ -25,7 +25,7 @@ export const HomeScreen = () => {
         ebcFilter={ebcFilter}
         clearFilters={clearFilters}
       />
-      <BeersList beers={beersQuery.data!} isLoading={beersQuery.isLoading} />
+      <BeersList beers={beersQuery.data!} isLoading={beersQuery.isLoading} clearFilters={clearFilters} />
       <FloatingButton onPress={handleButtonPress} title="Info" />
     </View>
   );
